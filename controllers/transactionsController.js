@@ -27,16 +27,16 @@ transactions.get("/", (request, response) => {
 })
 // Show
 transactions.get("/:arrayIndex", (request, response) => {
-    const { index } = request.params
-    transactionsArr[index]
-    ? response.json(transactionsArr[index])
+    const { arrayIndex } = request.params
+    transactionsArr[arrayIndex]
+    ? response.json(transactionsArr[arrayIndex])
     : response.redirect("/404")
 })
 // Update
 transactions.put("/:arrayIndex", (request, response) => {
-    const { index } = request.params
-    transactionsArr[index]  = request.body
-    response.status(200).json(transactionsArr[index])
+    const { arrayIndex } = request.params
+    transactionsArr[arrayIndex]  = request.body
+    response.status(200).json(transactionsArr[arrayIndex])
 })
 // Create
 transactions.post("/", validateURL ,() => {
@@ -45,8 +45,8 @@ transactions.post("/", validateURL ,() => {
 })
 // Delete
 transactions.delete("/:indexArr", (request, response) => {
-    const { index } = request.params
-    const deleteTransaction = transactionsArr.splice(index, 1)
+    const { indexArr } = request.params
+    const deleteTransaction = transactionsArr.splice(indexArr, 1)
     response.status(200).json(deleteTransaction)
 })
 
