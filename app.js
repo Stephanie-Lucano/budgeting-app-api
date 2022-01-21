@@ -13,7 +13,7 @@ app.use("/transactions", transactionsController)
 
 // ROUTES
 app.get("/", (request, response) => {
-    response.send("Welcome to Budgeting App");
+    response.status(200).send("Welcome to Budgeting App");
 });
 
 app.get("*", (request, response) => {
