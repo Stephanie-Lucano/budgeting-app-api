@@ -22,9 +22,8 @@ transactions.get("/:arrayIndex", (request, response) => {
 })
 // Update
 transactions.put("/:arrayIndex", (request, response) => {
-    const { arrayIndex } = request.params
-    transactionsArr[arrayIndex]  = request.body
-    response.status(200).json(transactionsArr[arrayIndex])
+    transactionsArr[request.params.arrayIndex]  = request.body
+    response.status(200).json(transactionsArr[request.params.arrayIndex])
 })
 // Create
 transactions.post("/", (request, response) => {
