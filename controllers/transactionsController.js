@@ -39,7 +39,7 @@ transactions.put("/:arrayIndex", (request, response) => {
     response.status(200).json(transactionsArr[arrayIndex])
 })
 // Create
-transactions.post("/", validateURL ,() => {
+transactions.post("/", validateURL , (request, response) => {
     const updatedArr = transactionsArr.push(request.body)
     response.status(200).json(transactionsArr[updatedArr-1])
 })
